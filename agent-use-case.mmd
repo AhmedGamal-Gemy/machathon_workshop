@@ -1,0 +1,35 @@
+flowchart LR
+    User[("👤 User")]
+    Admin[("🔧 Admin")]
+    System[("⚙️ External\nSystem")]
+
+    subgraph "AI Agent Capabilities"
+        UC1[("Process\nNatural Language")]
+        UC2[("Execute\nTasks")]
+        UC3[("Generate\nCode")]
+        UC4[("Search\nWeb/Docs")]
+        UC5[("Read/Write\nFiles")]
+        UC6[("Run\nCommands")]
+        UC7[("Learn\nContext")]
+        UC8[("Manage\nTools/Skills")]
+        UC9[("Handle\nErrors")]
+        UC10[("Explain\nCode")]
+    end
+
+    User --> UC1
+    User --> UC2
+    User --> UC3
+    User --> UC4
+    User --> UC10
+    
+    UC2 -.-> UC5
+    UC2 -.-> UC6
+    UC2 -.-> UC4
+    
+    Admin --> UC8
+    Admin --> UC9
+    Admin --> UC7
+    
+    UC7 -.-> UC1
+    UC6 -.-> System
+    UC4 -.-> System
